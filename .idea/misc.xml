@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Poetry (NBA)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Poetry (nba-fastapi)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Poetry (NBA)" project-jdk-type="Python SDK" />
 </project>

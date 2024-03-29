@@ -3,7 +3,7 @@ from database import Base
 from sqlalchemy.orm import relationship
 
 
-class Team(Base):
+class Teams(Base):
     __tablename__ = 'teams'
 
     id = Column(Integer, primary_key=True, index=True)
@@ -27,7 +27,7 @@ class Player(Base):
     birthdate = Column(Date)
     age = Column(Integer)
     team_id = Column(Integer, ForeignKey('teams.id'))
-    team = relationship('Team', back_populates='players')
+    team = relationship('Teams', back_populates='players')
 
 
 class Staff(Base):

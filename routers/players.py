@@ -19,7 +19,7 @@ async def get_player_by_his_name(player_name: str, db: Session = Depends(get_db)
     return player
 
 
-@router.get("by_height/{height}", status_code=status.HTTP_200_OK)
+@router.get("/by_height/{height}", status_code=status.HTTP_200_OK)
 async def get_player_by_height(height: float, db: Session = Depends(get_db)):
     players = await p_service.get_players_by_height(height, db)
     return players

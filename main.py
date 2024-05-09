@@ -1,15 +1,17 @@
+from fastapi import FastAPI
 
-from fastapi import  FastAPI
-
-
-from routers import players, teams
-import models
 from database import SessionLocal, engine
-
+from models import Base
+from routers import players, teams
 
 app = FastAPI()
 
-models.Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine)
+
+
+@app.get("/healthy")  # api healthcheck
+def health_check():
+    return {'status': 'healthy'}
 
 
 def get_db():

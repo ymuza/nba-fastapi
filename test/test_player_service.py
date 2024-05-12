@@ -18,12 +18,6 @@ def player_service(mock_db_session):
     return PlayerService()
 
 
-@pytest.fixture
-def test_players():
-    player = Player(id="1", name="michael jordan", height=6.6, weight=200,
-                    years_pro=10, birthdate='02-17-1963', age=32, team_id=5, team='Chicago Bulls')
-
-
 @pytest.mark.asyncio
 async def test_get_player_by_name_found(player_service, mock_db_session):
     # Arrange

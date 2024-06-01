@@ -6,13 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile
     command: >
-      sh -c "./wait-for-it.sh db:5432 -- alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8000"
+      sh -c "./wait-for-it.sh db:5432 -- alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8080"
     ports:
-      - "8000:8000"
+      - "8080:8080"
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://postgres:password@db:5432/mydatabase
+      - DATABASE_URL=postgresql://yamil:32874993@db:5432/nba
     volumes:
       - .:/app
 

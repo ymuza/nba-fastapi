@@ -20,7 +20,7 @@ COPY wait-for-it.sh /app/
 RUN chmod +x /app/wait-for-it.sh
 
 # Expose the port that the app will run on
-EXPOSE 8000
+EXPOSE 8080
 
 # Command to run the application
-CMD ["sh", "/app/wait-for-it.sh", "db:5432", "--", "sh", "-c", "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8000"]
+CMD ["sh", "/app/wait-for-it.sh", "db:5432", "--", "sh", "-c", "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8080"]

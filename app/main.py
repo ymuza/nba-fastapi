@@ -1,7 +1,7 @@
-from database import SessionLocal, engine
 from fastapi import FastAPI
-from models import Base
 
+from app.database import SessionLocal, engine
+from app.models import Base
 from app.routers import players, teams
 
 app = FastAPI()

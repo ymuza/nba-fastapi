@@ -6,11 +6,6 @@ from sqlalchemy.orm import sessionmaker
 
 DOCKER_DATABASE_URL = os.getenv('DATABASE_URL')
 
-
-#SQLALCHEMY_DATABASE_URL = "postgresql://yamil:32874993@localhost:5432/nba"
-
-#engine = create_engine(SQLALCHEMY_DATABASE_URL)
-
 engine = create_engine(DOCKER_DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

@@ -4,7 +4,7 @@ from starlette import status
 
 from app.database import get_db
 from app.models import Teams
-from app.pydantic_models import Team
+from app.pydantic_models.teams import Team
 
 router = APIRouter(
     prefix="/teams", tags=["teams"], responses={404: {"description": "not found"}}
